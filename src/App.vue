@@ -1,17 +1,22 @@
 <template>
   <h1>Counter App</h1>
   <h3>Counter: {{ counter }}</h3>
-  <button @click="increment">Increment</button>
-  <button @click="decrement">Decrement</button>
-  <button @click="reset">Reset</button>
+  <Button name="Increment" :handle="increment" />
+  <Button name="Decrement" :handle="decrement" />
+  <Button name="Reset" :handle="reset" />
 </template>
 
 <script>
+import Button from "./components/Button.vue";
+
 export default {
   data() {
     return {
       counter: 0,
     };
+  },
+  components: {
+    Button,
   },
   methods: {
     increment() {
